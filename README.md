@@ -15,7 +15,7 @@ Roche uses the excellent cargo-generate under the hood.
 [Learn more about `cargo generate` here.](https://github.com/ashleygwilliams/cargo-generate)
 
 ```
-roche init default --name my-project
+roche init mongodb --name my-project
 cd my-project
 ```
 
