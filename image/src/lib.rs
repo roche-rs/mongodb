@@ -11,17 +11,11 @@ pub struct State {
 #[cfg(test)]
 #[async_std::test]
 async fn run_lib() {
-    use dotenv;
+    use dotenv::dotenv;
     use mongodb::{options::ClientOptions, Client};
     use std::env;
-    use std::path::Path;
     use tide::prelude::*;
-
-    let dirname = env::current_dir().unwrap();
-    let envlocation = format!("{}/src/.env", dirname.display());
-    let env_path = Path::new(&envlocation);
-    dotenv::from_path(env_path).unwrap();
-
+    dotenv().ok();
     let mongodb_conn = match env::var("MONGODB_CONNECTION_STRING") {
         Ok(val) => val,
         Err(e) => panic!("Error getting MONGODB_CONNECTION_STRING: {}", e),

@@ -15,20 +15,20 @@ pub struct City {
 }
 
 pub fn handler(state: super::State) -> tide::Server<super::State> {
-    
     let mut api = tide::with_state(state);
 
-    api.at("/").get(|req: tide::Request<super::State>| async move {
-        let state = &req.state();
-        let db = &state.client.database("test");
-        let mut cursor = City::find(&db.clone(), None, None).await?;
-        let mut docs: Vec<City> = Vec::new();
+    api.at("/")
+        .get(|req: tide::Request<super::State>| async move {
+            let state = &req.state();
+            let db = &state.client.database("test");
+            let mut cursor = City::find(&db.clone(), None, None).await?;
+            let mut docs: Vec<City> = Vec::new();
 
-        while let Some(city) = cursor.next().await {
-            docs.push(city?);
-        }
-        Ok(serde_json::to_value(docs).unwrap())
-    });
+            while let Some(city) = cursor.next().await {
+                docs.push(city?);
+            }
+            Ok(serde_json::to_value(docs).unwrap())
+        });
 
     api
 }
