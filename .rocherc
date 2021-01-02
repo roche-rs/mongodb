@@ -2,3 +2,4 @@ dev_build_image=quay.io/roche/dev-mongodb:1.0.0
 test_build_image=quay.io/roche/dev-mongodb:1.0.0
 release_build_image=quay.io/roche/mongodb:1.0.0
 runtime_image=quay.io/roche/alpine-libgcc:3.12
+branch=1.1.0
