@@ -8,7 +8,7 @@ ENV RUSTFLAGS="-C target-feature=-crt-static"
 
 RUN \
   apk add --no-cache musl-dev openssl-dev && \
-  cargo build --release \
+  cargo build --release && cargo test default \
  && echo "#!/bin/sh" > run.sh \
  && bin=$(find ./target/release -maxdepth 1 -perm -111 -type f| head -n 1) \
  && echo ./${bin##*/} >> run.sh \

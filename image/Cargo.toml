@@ -1,5 +1,5 @@
 [package]
-name = "roche-mongodb-service"
+name = "roche-service"
 version = "0.1.0"
 authors = ["Anton Whalley <anton@venshare.com>"]
 edition = "2018"

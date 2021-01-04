@@ -43,3 +43,11 @@ async fn run_lib() {
 
     assert_eq!(response_json, json!([]));
 }
+
+#[async_std::test]
+async fn default() {
+    use tide_testing::TideTestingExt;
+    let app = functions::default();
+    let resp_string = app.get("/").recv_string().await.unwrap();
+    assert!(resp_string.contains("httpbin.org"));
+}
