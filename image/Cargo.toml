@@ -19,5 +19,10 @@ mongodb = { version = "1", default-features=false }
 serde_json = "1.0.39"
 lazy_static = "1"
 wither = { version = "0.9.0-alpha.2", features = ["async-std-runtime"], default-features = false }
+
+[patch.crates-io]
+mongodb = { git = "https://github.com/No9/mongo-rust-driver", branch = "upgrade-os-info", features = ["async-std-runtime"], version = "1", default-features = false } 
+
+
 [dev-dependencies]
 tide-testing = "0.1.2"

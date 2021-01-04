@@ -2,10 +2,15 @@
 
 ## About
 
-[**📚 Read this template tutorial! 📚**](https://roche-rs.org/tutorials/project.html)
+[**📚 Read this template tutorial! 📚**](https://roche-rs.org/tutorials/mongodb.html)
 
 This template is designed roche and is used for compiling Rust libraries into docker and 
 publishing the resulting package as knative service.
+
+
+dev-mongodb - [![Docker Repository on Quay](https://quay.io/repository/roche/dev-mongodb/status "Docker Repository on Quay")](https://quay.io/repository/roche/dev-mongodb)
+
+mongodb - [![Docker Repository on Quay](https://quay.io/repository/roche/mongodb/status "Docker Repository on Quay")](https://quay.io/repository/roche/mongodb)
 
 ## 🚴 Usage
 
@@ -23,12 +28,13 @@ cd my-project
 
 ```
 docker login
-roche build -b quay.io/roche/dev-mongodb:1.0.0
+roche build
 ```
 
 ### 🔬 Testing the library
 
 ```
-roche test -l quay.io/roche/dev-mongodb:1.0.0
+docker run -p 27017:27017 -v ~/data:/data mongo:4.2
+roche test
 ```
 

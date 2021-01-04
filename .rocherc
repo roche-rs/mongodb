@@ -1,6 +1,6 @@
-dev_build_image=quay.io/roche/dev-mongodb:1.1.0
-test_build_image=quay.io/roche/dev-mongodb:1.1.0
-release_build_image=quay.io/roche/mongodb:1.0.0
+dev_build_image=quay.io/roche/dev-mongodb:1.2.0
+test_build_image=quay.io/roche/dev-mongodb:1.2.0
+release_build_image=quay.io/roche/mongodb:1.2.0
 runtime_image=quay.io/roche/alpine-libgcc:3.12
 branch=1.0.0
 image_name="roche-service"
